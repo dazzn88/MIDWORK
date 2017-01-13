@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var list = (List<WebApplication3.Models.project>)ViewBag.ListDatas;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/contect/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="~/contect/js/bootstrap.js"></script>
+</head>
+<body>
+    <div>
+        <h1>MIDWORK</h1>
+    </div>
+
+    <table class="table table-hover">
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td>職位 </td>
+                <td>姓名</td>
+                <td>綽號 </td>
+            </tr>
+
+
+
+            @for (var i = 0; i < list.Count; i++)
+            {
+
+                <tr>
+                    <td class="col-md-1" && class="active">@list[i].job</td>
+                    <td class="col-md-1">@list[i].name</td>
+                    <td class="col-md-10">@list[i].motto</td>
+                </tr>
+            }
+
+
+        </tbody>
+        <tfoot></tfoot>
+
+    </table>
+
+</body>
+</html>
+
+
+
+
